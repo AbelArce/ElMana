@@ -1,0 +1,17 @@
+{
+  "desayuno": {
+    "dias": ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"],
+    "horario": "8:00 AM - 11:00 AM",
+    "descripcion": "Desayunos tradicionales y nutritivos para empezar el día con energía"
+  },
+  "menu": {
+    "dias": ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"],
+    "horario": "11:30 AM - 5:00 PM",
+    "descripcion": "Menú ejecutivo y platos del día con lo mejor de la cocina norteña"
+  },
+  "cena": {
+    "dias": ["viernes", "sabado", "domingo"],
+    "horario": "5:00 PM - 11:30 PM",
+    "descripcion": "Especialidades chifa, jugos naturales y platos nocturnos"
+  }
+}

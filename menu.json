@@ -1,0 +1,200 @@
+{
+  "desayuno": [
+    {
+      "nombre": "Desayuno Tradicional Norteño",
+      "descripcion": "Tamales, humitas con café o chocolate, acompañado de pan fresco y mantequilla",
+      "precio": "15.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Desayuno Energético",
+      "descripcion": "Jugo de frutas natural, sandwich de pollo, fruta de temporada y yogurt",
+      "precio": "18.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Desayuno Marino",
+      "descripcion": "Chilcano de pescado, ceviche de pescado, yuca sancochada y cancha serrana",
+      "precio": "22.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ],
+  "lunes": [
+    {
+      "nombre": "Seco de Cabrito Clásico",
+      "descripcion": "Tierno cabrito cocinado en su jugo con chicha de jora, acompañado de yuca y arroz",
+      "precio": "28.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Arroz con Pollo a la Chiclayana",
+      "descripcion": "Arroz verde con pollo tierno, acompañado de yuca sancochada y salsa criolla",
+      "precio": "25.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Tallarín Verde con Bistec",
+      "descripcion": "Tallarín en salsa de albahaca fresca con jugoso bistec a la plancha",
+      "precio": "22.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ],
+  "martes": [
+    {
+      "nombre": "Ceviche Mixto del Norte",
+      "descripcion": "Pescado y mariscos frescos en leche de tigre, acompañado de camote y chifles",
+      "precio": "30.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Pepián de Pavo",
+      "descripcion": "Pavo desmenuzado en salsa de ají panca y maní, con arroz y yuca",
+      "precio": "26.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Chicharrón de Pescado",
+      "descripcion": "Pescado frito crujiente con yuca sancochada, sarza y salsa criolla",
+      "precio": "24.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ],
+  "miercoles": [
+    {
+      "nombre": "Carapulcra con Sopa Seca",
+      "descripcion": "Clásica combinación norteña de carapulcra y sopa seca de fideos",
+      "precio": "27.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Lomo Saltado Tradicional",
+      "descripcion": "Lomo de res salteado con cebolla, tomate, ají amarillo y papas fritas",
+      "precio": "32.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Parihuela Norteña",
+      "descripcion": "Sustanciosa sopa de mariscos con pescado, langostinos y conchas",
+      "precio": "28.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ],
+  "jueves": [
+    {
+      "nombre": "Shambar Lambayecano",
+      "descripcion": "Sopa tradicional con menestras, trigo, chancho y jamón del país",
+      "precio": "23.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Pollo a la Brasa",
+      "descripcion": "Jugoso pollo asado a las brasas con papas fritas y ensalada",
+      "precio": "29.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Tacu Tacu con Lomo",
+      "descripcion": "Tacu tacu frejol con arroz, acompañado de lomo saltado y huevo frito",
+      "precio": "26.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ],
+  "viernes": [
+    {
+      "nombre": "Jalea de Pescado",
+      "descripcion": "Pescado cocido en su propio jugo con ajo, cebolla y ají amarillo",
+      "precio": "25.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Arroz con Mariscos",
+      "descripcion": "Arroz sabroso con variedad de mariscos frescos del norte",
+      "precio": "35.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Causa Rellena de Atún",
+      "descripcion": "Causa limeña rellena de atún con mayonesa, aceitunas y huevo",
+      "precio": "20.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ],
+  "sabado": [
+    {
+      "nombre": "Pato al Arroz Chiclayano",
+      "descripcion": "Pato cocinado lentamente con arroz en chicha de jora y culantro",
+      "precio": "38.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Churrasco a lo Pobre",
+      "descripcion": "Carne asada con huevos fritos, plátanos y arroz con menestras",
+      "precio": "33.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Ceviche de Conchas Negras",
+      "descripcion": "Exquisito ceviche de conchas negras con su leche de tigre especial",
+      "precio": "32.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ],
+  "domingo": [
+    {
+      "nombre": "Pachamanca del Domingo",
+      "descripcion": "Tradicional pachamanca con carne de cordero, cerdo y pollo con papas y camotes",
+      "precio": "45.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Chicharrón de Chancho",
+      "descripcion": "Crujiente chicharrón de chancho con camote sancochado y mote",
+      "precio": "28.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Sopa a la Criolla",
+      "descripcion": "Sustanciosa sopa con carne de res, fideos, huevo y hierbas aromáticas",
+      "precio": "22.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ],
+  "cena": [
+    {
+      "nombre": "Chaufa de Pollo",
+      "descripcion": "Arroz salteado al estilo chino con pollo, huevo, cebollín y salsa soya",
+      "precio": "26.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Tallarín Saltado",
+      "descripcion": "Tallarín salteado con pollo, verduras y salsa de soya al estilo chifa",
+      "precio": "24.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Jugo Especial El Maná",
+      "descripcion": "Jugo natural mixto con frutas de temporada, leche y miel",
+      "precio": "12.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Pollo Chijaukay",
+      "descripcion": "Pollo frito con salsa especial de tamarindo y ají amarillo",
+      "precio": "28.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Arroz Chaufa de Mariscos",
+      "descripcion": "Arroz salteado con mariscos frescos, huevo y vegetales",
+      "precio": "32.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Jugo Verde Detox",
+      "descripcion": "Jugo de apio, espinaca, piña y limón para una cena ligera",
+      "precio": "10.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    }
+  ]
+}

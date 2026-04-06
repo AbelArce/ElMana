@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Maná - Restaurante Premium en Ferreñafe</title>
+    <meta name="description" content="Restaurante El Maná en Ferreñafe, Perú. Experiencia gastronómica premium con menú semanal variado y servicio excepcional.">
+    <meta name="keywords" content="restaurante, Ferreñafe, comida peruana, menú semanal, pedidos WhatsApp">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="El Maná - Restaurante Premium en Ferreñafe">
+    <meta property="og:description" content="Experiencia gastronómica premium con menú semanal variado">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>El Maná</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu" class="nav-link">Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#promociones" class="nav-link">Promociones</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#nosotros" class="nav-link">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ubicacion" class="nav-link">Ubicación</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">El Maná</h1>
+            <p class="hero-subtitle">Sabor que alimenta el alma</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Ver Menú</a>
+                <a href="https://wa.me/519XXXXXXXX" class="btn btn-secondary" target="_blank">Pedir por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestro Menú</h2>
+                <p class="section-subtitle">Platos frescos cada día, elaborados con los mejores ingredientes</p>
+            </div>
+            
+            <!-- Tabs de servicios -->
+            <div class="service-tabs">
+                <button class="service-tab-btn active" data-service="desayuno">🍳 Desayuno</button>
+                <button class="service-tab-btn" data-service="menu">🍽️ Menú del Día</button>
+                <button class="service-tab-btn" data-service="cena">🌙 Cena</button>
+            </div>
+            
+            <!-- Información del servicio actual -->
+            <div id="service-info" class="service-info">
+                <!-- Se cargará dinámicamente -->
+            </div>
+            
+            <!-- Contenedor del menú -->
+            <div id="menu-container" class="menu-container">
+                <!-- El menú se cargará dinámicamente desde menu.json -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promociones Section -->
+    <section id="promociones" class="promotions">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Promociones Especiales</h2>
+                <p class="section-subtitle">Aprovecha nuestras ofertas exclusivas</p>
+            </div>
+            
+            <div class="promotions-grid">
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=Combo+Ejecutivo" alt="Combo Ejecutivo">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Combo Ejecutivo</h3>
+                        <p>Plato del día + bebida + postre</p>
+                        <div class="promotion-price">
+                            <span class="original-price">S/. 25.00</span>
+                            <span class="current-price">S/. 20.00</span>
+                        </div>
+                        <a href="https://wa.me/519XXXXXXXX?text=Hola,%20quiero%20aprovechar%20el%20Combo%20Ejecutivo" class="btn btn-primary" target="_blank">Pedir Ahora</a>
+                    </div>
+                </div>
+                
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=2x1+en+Bebidas" alt="2x1 en Bebidas">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>2x1 en Bebidas</h3>
+                        <p>Válido todos los días en horario de almuerzo</p>
+                        <div class="promotion-price">
+                            <span class="current-price">S/. 8.00</span>
+                        </div>
+                        <a href="https://wa.me/519XXXXXXXX?text=Hola,%20quiero%20aprovechar%20el%202x1%20en%20bebidas" class="btn btn-primary" target="_blank">Pedir Ahora</a>
+                    </div>
+                </div>
+                
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=Descuento+Familia" alt="Descuento Familia">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Descuento Familia</h3>
+                        <p>10% de descuento en grupos de 4+ personas</p>
+                        <div class="promotion-price">
+                            <span class="current-price">10% OFF</span>
+                        </div>
+                        <a href="https://wa.me/519XXXXXXXX?text=Hola,%20somos%20un%20grupo%20familiar%20y%20queremos%20hacer%20una%20reserva" class="btn btn-primary" target="_blank">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros Section -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p class="section-subtitle">Conoce nuestra historia y pasión por la gastronomía</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>El Maná: Tradición y Sabor</h3>
+                    <p>En El Maná, combinamos la riqueza de la cocina peruana con técnicas modernas para crear experiencias gastronómicas únicas. Nuestro restaurante, ubicado en el corazón de Ferreñafe, es el lugar perfecto para disfrutar de platos auténticos elaborados con ingredientes frescos y de la más alta calidad.</p>
+                    <p>Fundado por César Daniel Santisteban Cabrera, nuestro compromiso es ofrecer no solo comida excepcional, sino también un servicio impecable que haga que cada visita sea memorable.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <span class="feature-icon">🍽️</span>
+                            <span>Menú semanal variado</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌟</span>
+                            <span>Ingredientes frescos</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">💎</span>
+                            <span>Servicio premium</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Restaurante+El+Maná" alt="Restaurante El Maná">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Section -->
+    <section id="ubicacion" class="location">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ubicación</h2>
+                <p class="section-subtitle">Encuéntranos en el corazón de Ferreñafe</p>
+            </div>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Visítanos</h3>
+                    <p><strong>Dirección:</strong> Costado del parque de Pueblo Nuevo, Ferreñafe, Lambayeque, Perú</p>
+                    <p><strong>Horario:</strong></p>
+                    <ul class="schedule">
+                        <li>🍳 Desayunos: 8:00 AM - 11:00 AM (Todos los días)</li>
+                        <li>🍽️ Menú del Día: 11:30 AM - 5:00 PM (Todos los días)</li>
+                        <li>🌙 Cenas: 5:00 PM - 11:30 PM (Viernes, Sábado, Domingo)</li>
+                    </ul>
+                    <a href="https://wa.me/519XXXXXXXX" class="btn btn-primary" target="_blank">Llamar para Reservar</a>
+                    <a href="https://maps.app.goo.gl/5rrnnP4TKV6qARcn8" class="btn btn-secondary" target="_blank">Ver en Google Maps</a>
+                </div>
+                <div class="location-visual">
+                    <div class="restaurant-image">
+                        <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Restaurante+El+Maná+Frente" alt="Fachada del Restaurante El Maná">
+                    </div>
+                    <div class="location-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.123456789!2d-79.8469!3d-6.0489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ac3a5b3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sEl+Man%C3%A1!5e0!3m2!1ses!2spe!4v1234567890123"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">Haz tu pedido o reserva tu mesa</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>Haz pedidos rápidos y reservas</p>
+                            <a href="https://wa.me/519XXXXXXXX" class="btn btn-whatsapp" target="_blank">Escribir ahora</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">🕘</span>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Domingo: 8:00 AM - 11:30 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Costado del parque de Pueblo Nuevo<br>Ferreñafe, Lambayeque, Perú</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <h3>¿Listo para disfrutar?</h3>
+                    <p>Haz tu pedido ahora o reserva tu mesa para una experiencia gastronómica inolvidable</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/519XXXXXXXX" class="btn btn-primary btn-large" target="_blank">Pedir por WhatsApp</a>
+                        <a href="#menu" class="btn btn-secondary btn-large">Ver Menú</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>El Maná</h3>
+                    <p>Sabor que alimenta el alma</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#menu">Menú</a></li>
+                        <li><a href="#promociones">Promociones</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>📍 Costado del parque de Pueblo Nuevo, Ferreñafe</p>
+                    <p>📱 WhatsApp: +51 9 XXX XXXXX</p>
+                    <p>🕘 Horario: 8:00 AM - 11:30 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 El Maná. Todos los derechos reservados. Desarrollado con ❤️ para Ferreñafe</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Datos del menú integrados para evitar problemas CORS
+        const MENU_DATA = {
+            "desayuno": [
+                {
+                    "nombre": "Desayuno Tradicional Norteño",
+                    "descripcion": "Tamales, humitas con café o chocolate, acompañado de pan fresco y mantequilla",
+                    "precio": "15.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Desayuno+Tradicional"
+                },
+                {
+                    "nombre": "Desayuno Energético",
+                    "descripcion": "Jugo de frutas natural, sandwich de pollo, fruta de temporada y yogurt",
+                    "precio": "18.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Desayuno+Energético"
+                },
+                {
+                    "nombre": "Desayuno Marino",
+                    "descripcion": "Chilcano de pescado, ceviche de pescado, yuca sancochada y cancha serrana",
+                    "precio": "22.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Desayuno+Marino"
+                }
+            ],
+            "lunes": [
+                {
+                    "nombre": "Seco de Cabrito Clásico",
+                    "descripcion": "Tierno cabrito cocinado en su jugo con chicha de jora, acompañado de yuca y arroz",
+                    "precio": "28.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Seco+de+Cabrito"
+                },
+                {
+                    "nombre": "Arroz con Pollo a la Chiclayana",
+                    "descripcion": "Arroz verde con pollo tierno, acompañado de yuca sancochada y salsa criolla",
+                    "precio": "25.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Arroz+con+Pollo"
+                },
+                {
+                    "nombre": "Tallarín Verde con Bistec",
+                    "descripcion": "Tallarín en salsa de albahaca fresca con jugoso bistec a la plancha",
+                    "precio": "22.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Tallarín+Verde"
+                }
+            ],
+            "martes": [
+                {
+                    "nombre": "Ceviche Mixto del Norte",
+                    "descripcion": "Pescado y mariscos frescos en leche de tigre, acompañado de camote y chifles",
+                    "precio": "30.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Ceviche+Mixto"
+                },
+                {
+                    "nombre": "Pepián de Pavo",
+                    "descripcion": "Pavo desmenuzado en salsa de ají panca y maní, con arroz y yuca",
+                    "precio": "26.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Pepián+de+Pavo"
+                },
+                {
+                    "nombre": "Chicharrón de Pescado",
+                    "descripcion": "Pescado frito crujiente con yuca sancochada, sarza y salsa criolla",
+                    "precio": "24.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Chicharrón+de+Pescado"
+                }
+            ],
+            "miercoles": [
+                {
+                    "nombre": "Carapulcra con Sopa Seca",
+                    "descripcion": "Clásica combinación norteña de carapulcra y sopa seca de fideos",
+                    "precio": "27.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Carapulcra"
+                },
+                {
+                    "nombre": "Lomo Saltado Tradicional",
+                    "descripcion": "Lomo de res salteado con cebolla, tomate, ají amarillo y papas fritas",
+                    "precio": "32.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Lomo+Saltado"
+                },
+                {
+                    "nombre": "Parihuela Norteña",
+                    "descripcion": "Sustanciosa sopa de mariscos con pescado, langostinos y conchas",
+                    "precio": "28.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Parihuela"
+                }
+            ],
+            "jueves": [
+                {
+                    "nombre": "Shambar Lambayecano",
+                    "descripcion": "Sopa tradicional con menestras, trigo, chancho y jamón del país",
+                    "precio": "23.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Shambar"
+                },
+                {
+                    "nombre": "Pollo a la Brasa",
+                    "descripcion": "Jugoso pollo asado a las brasas con papas fritas y ensalada",
+                    "precio": "29.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Pollo+a+la+Brasa"
+                },
+                {
+                    "nombre": "Tacu Tacu con Lomo",
+                    "descripcion": "Tacu tacu frejol con arroz, acompañado de lomo saltado y huevo frito",
+                    "precio": "26.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Tacu+Tacu+con+Lomo"
+                }
+            ],
+            "viernes": [
+                {
+                    "nombre": "Jalea de Pescado",
+                    "descripcion": "Pescado cocido en su propio jugo con ajo, cebolla y ají amarillo",
+                    "precio": "25.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Jalea+de+Pescado"
+                },
+                {
+                    "nombre": "Arroz con Mariscos",
+                    "descripcion": "Arroz sabroso con variedad de mariscos frescos del norte",
+                    "precio": "35.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Arroz+con+Mariscos"
+                },
+                {
+                    "nombre": "Causa Rellena de Atún",
+                    "descripcion": "Causa limeña rellena de atún con mayonesa, aceitunas y huevo",
+                    "precio": "20.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Causa+Rellena"
+                }
+            ],
+            "sabado": [
+                {
+                    "nombre": "Pato al Arroz Chiclayano",
+                    "descripcion": "Pato cocinado lentamente con arroz en chicha de jora y culantro",
+                    "precio": "38.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Pato+al+Arroz"
+                },
+                {
+                    "nombre": "Churrasco a lo Pobre",
+                    "descripcion": "Carne asada con huevos fritos, plátanos y arroz con menestras",
+                    "precio": "33.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Churrasco"
+                },
+                {
+                    "nombre": "Ceviche de Conchas Negras",
+                    "descripcion": "Exquisito ceviche de conchas negras con su leche de tigre especial",
+                    "precio": "32.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Conchas+Negras"
+                }
+            ],
+            "domingo": [
+                {
+                    "nombre": "Pachamanca del Domingo",
+                    "descripcion": "Tradicional pachamanca con carne de cordero, cerdo y pollo con papas y camotes",
+                    "precio": "45.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Pachamanca"
+                },
+                {
+                    "nombre": "Chicharrón de Chancho",
+                    "descripcion": "Crujiente chicharrón de chancho con camote sancochado y mote",
+                    "precio": "28.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Chicharrón+de+Chancho"
+                },
+                {
+                    "nombre": "Sopa a la Criolla",
+                    "descripcion": "Sustanciosa sopa con carne de res, fideos, huevo y hierbas aromáticas",
+                    "precio": "22.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Sopa+a+la+Criolla"
+                }
+            ],
+            "cena": [
+                {
+                    "nombre": "Chaufa de Pollo",
+                    "descripcion": "Arroz salteado al estilo chino con pollo, huevo, cebollín y salsa soya",
+                    "precio": "26.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Chaufa+de+Pollo"
+                },
+                {
+                    "nombre": "Tallarín Saltado",
+                    "descripcion": "Tallarín salteado con pollo, verduras y salsa de soya al estilo chifa",
+                    "precio": "24.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Tallarín+Saltado"
+                },
+                {
+                    "nombre": "Jugo Especial El Maná",
+                    "descripcion": "Jugo natural mixto con frutas de temporada, leche y miel",
+                    "precio": "12.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Jugo+Especial"
+                },
+                {
+                    "nombre": "Pollo Chijaukay",
+                    "descripcion": "Pollo frito con salsa especial de tamarindo y ají amarillo",
+                    "precio": "28.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Pollo+Chijaukay"
+                },
+                {
+                    "nombre": "Arroz Chaufa de Mariscos",
+                    "descripcion": "Arroz salteado con mariscos frescos, huevo y vegetales",
+                    "precio": "32.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Chaufa+de+Mariscos"
+                },
+                {
+                    "nombre": "Jugo Verde Detox",
+                    "descripcion": "Jugo de apio, espinaca, piña y limón para una cena ligera",
+                    "precio": "10.00",
+                    "imagen": "https://via.placeholder.com/400x300/000000/FFFFFF?text=Jugo+Verde"
+                }
+            ]
+        };
+
+        // Datos de horarios integrados
+        const HORARIOS_DATA = {
+            "desayuno": {
+                "dias": ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"],
+                "horario": "8:00 AM - 11:00 AM",
+                "descripcion": "Desayunos tradicionales y nutritivos para empezar el día con energía"
+            },
+            "menu": {
+                "dias": ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"],
+                "horario": "11:30 AM - 5:00 PM",
+                "descripcion": "Menú ejecutivo y platos del día con lo mejor de la cocina norteña"
+            },
+            "cena": {
+                "dias": ["viernes", "sabado", "domingo"],
+                "horario": "5:00 PM - 11:30 PM",
+                "descripcion": "Especialidades chifa, jugos naturales y platos nocturnos"
+            }
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
