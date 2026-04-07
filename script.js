@@ -363,13 +363,16 @@ function updatePageWithConfig() {
 // Configurar tabs de servicios
 function setupServiceTabs() {
     const serviceButtons = document.querySelectorAll('.service-tab-btn');
+
+    // Resetear estados para evitar doble resaltado por clases hardcodeadas
+    serviceButtons.forEach(b => b.classList.remove('active', 'current'));
     
     serviceButtons.forEach(btn => {
         const service = btn.dataset.service;
         
         // Marcar servicio actual
         if (service === currentService) {
-            btn.classList.add('current');
+            btn.classList.add('current', 'active');
         }
         
         btn.addEventListener('click', () => {
@@ -379,18 +382,15 @@ function setupServiceTabs() {
             });
             
             // Agregar clase active al botón clickeado
-            btn.classList.add('active');
+            btn.classList.add('active', 'current');
+
+            // Actualizar servicio seleccionado
+            currentService = service;
             
             // Mostrar servicio seleccionado
             showService(service);
         });
     });
-    
-    // Activar automáticamente el tab del servicio actual
-    const currentTab = document.querySelector(`.service-tab-btn[data-service="${currentService}"]`);
-    if (currentTab) {
-        currentTab.classList.add('active');
-    }
 }
 
 // Mostrar servicio específico
