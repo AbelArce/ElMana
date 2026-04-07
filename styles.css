@@ -373,69 +373,6 @@ section {
     font-size: 0.7rem;
 }
 
-/* ===== DAYS GALLERY ===== */
-/* Updated: 2026-04-07 10:45 */
-.days-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 0.2rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    padding: 0 1rem;
-}
-
-.day-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 6px;
-    padding: 4px 10px;
-    cursor: pointer;
-    transition: var(--transition);
-    text-align: center;
-    min-width: 45px;
-    font-size: 0.7rem;
-    position: relative;
-}
-
-.day-card:hover {
-    transform: translateY(-1px);
-    border-color: var(--color-accent);
-    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2);
-}
-
-.day-card.active {
-    background: linear-gradient(135deg, #D4AF37, #B8941F);
-    color: #000000;
-    border-color: #D4AF37;
-    font-weight: 700;
-    box-shadow: 0 2px 12px rgba(212, 175, 55, 0.3);
-}
-
-.day-card.today {
-    border-color: var(--color-warm-light);
-    color: var(--color-warm-light);
-    animation: pulse 2s infinite;
-}
-
-.day-card.today.active {
-    background: linear-gradient(135deg, #FF8C00, #FF6B35);
-    border-color: #FF8C00;
-    color: #000000;
-}
-
-.day-name {
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.2px;
-    margin-bottom: 0.1rem;
-}
-
-.day-date {
-    font-size: 0.5rem;
-    opacity: 0.7;
-}
-
 .service-info {
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.10), rgba(255, 255, 255, 0.04));
     border: 1px solid rgba(212, 175, 55, 0.22);
@@ -1055,27 +992,6 @@ section {
     .service-tab-btn i,
     .service-tab-btn .icon {
         font-size: 0.6rem;
-    }
-
-    .days-gallery {
-        gap: 0.1rem;
-        padding: 0 0.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .day-card {
-        padding: 3px 8px;
-        min-width: 40px;
-        font-size: 0.6rem;
-        border-radius: 4px;
-    }
-
-    .day-name {
-        font-size: 0.6rem;
-    }
-
-    .day-date {
-        font-size: 0.45rem;
     }
 
     .menu-container,

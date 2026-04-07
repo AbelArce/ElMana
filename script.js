@@ -39,10 +39,13 @@ async function initializeApp() {
         
         console.log('Aplicación inicializada correctamente');
         console.log('Día actual:', currentDay);
-        console.log('Servicio actual:', currentService);
     } catch (error) {
         console.error('Error al inicializar la aplicación:', error);
     }
+}
+
+function getWhatsappNumber() {
+    return (window.CONFIG_WHATSAPP_NUMBER || '').trim();
 }
 
 // ===== FUNCIONES PRINCIPALES =====
@@ -202,7 +205,8 @@ function hidePromotionsSection() {
 
 // Pedir promoción
 function orderPromotion(promoId, message) {
-    const whatsappNumber = window.CONFIG_WHATSAPP_NUMBER || WHATSAPP_NUMBER;
+    const whatsappNumber = getWhatsappNumber();
+    if (!whatsappNumber) return;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
 }
@@ -266,8 +270,8 @@ function updatePageWithConfig() {
     if (!configData) return;
     
     // Obtener número de WhatsApp desde configuración
-    const whatsappNumber = configData.restaurante?.whatsapp || WHATSAPP_NUMBER;
-    const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+    const whatsappNumber = (configData.restaurante?.whatsapp || '').trim();
+    const whatsappUrl = whatsappNumber ? `https://wa.me/${whatsappNumber}` : '';
     
     // Actualizar versión en footer
     const versionElement = document.getElementById('version-info');
@@ -294,22 +298,14 @@ function updatePageWithConfig() {
         keywordsElement.content = configData.seo.keywords;
     }
     
-    // Actualizar todos los enlaces de WhatsApp
-    const whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], a[href="#"]');
-    whatsappLinks.forEach(link => {
-        if (link.id && (link.id.includes('whatsapp') || link.id.includes('hero') || link.id.includes('contacto') || link.id.includes('location'))) {
-            link.href = whatsappUrl;
-        }
-    });
-    
     // Actualizar enlaces específicos por ID
     const heroWhatsappLink = document.getElementById('hero-whatsapp');
     const locationWhatsappLink = document.getElementById('location-whatsapp');
     const contactoWhatsappLink = document.getElementById('contacto-whatsapp');
     
-    if (heroWhatsappLink) heroWhatsappLink.href = whatsappUrl;
-    if (locationWhatsappLink) locationWhatsappLink.href = whatsappUrl;
-    if (contactoWhatsappLink) contactoWhatsappLink.href = whatsappUrl;
+    if (heroWhatsappLink && whatsappUrl) heroWhatsappLink.href = whatsappUrl;
+    if (locationWhatsappLink && whatsappUrl) locationWhatsappLink.href = whatsappUrl;
+    if (contactoWhatsappLink && whatsappUrl) contactoWhatsappLink.href = whatsappUrl;
     
     // Actualizar dirección
     const direccionElement = document.getElementById('direccion');
@@ -324,7 +320,9 @@ function updatePageWithConfig() {
     // Actualizar WhatsApp en footer
     const footerWhatsappElement = document.getElementById('footer-whatsapp');
     if (footerWhatsappElement) {
-        footerWhatsappElement.textContent = `+51 ${whatsappNumber.substring(2)}`;
+        if (whatsappNumber.length >= 3) {
+            footerWhatsappElement.textContent = `+51 ${whatsappNumber.substring(2)}`;
+        }
     }
     
     // Actualizar mapa
@@ -403,52 +401,6 @@ function showService(service) {
     } else {
         showDayMenuMenu(currentDay);
     }
-}
-
-// Configurar galería de días
-function setupDaysGallery() {
-    const daysGallery = document.getElementById('days-gallery');
-    
-    if (!menuData || !menuData.menu) {
-        daysGallery.innerHTML = '<p>No hay menú disponible</p>';
-        return;
-    }
-    
-    const days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
-    let galleryHTML = '';
-    
-    days.forEach(day => {
-        if (menuData.menu[day]) {
-            const isToday = day === currentDay;
-            const dayName = day.charAt(0).toUpperCase() + day.slice(1);
-            
-            galleryHTML += `
-                <div class="day-card ${isToday ? 'today' : ''} ${day === currentDay ? 'active' : ''}" data-day="${day}">
-                    <div class="day-name">${dayName}</div>
-                    <div class="day-date">${menuData.menu[day].length} platos</div>
-                </div>
-            `;
-        }
-    });
-    
-    daysGallery.innerHTML = galleryHTML;
-    
-    // Agregar event listeners a las tarjetas de días
-    const dayCards = daysGallery.querySelectorAll('.day-card');
-    dayCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const day = card.dataset.day;
-            
-            // Remover clase active de todas las tarjetas
-            dayCards.forEach(c => c.classList.remove('active'));
-            
-            // Agregar clase active a la tarjeta clickeada
-            card.classList.add('active');
-            
-            // Mostrar menú del día seleccionado
-            showDayMenuMenu(day);
-        });
-    });
 }
 
 // Actualizar información del servicio
@@ -569,6 +521,8 @@ function setupDayTabs() {
             
             // Agregar clase active al botón clickeado
             btn.classList.add('active');
+
+            currentDay = day;
             
             // Mostrar menú del día seleccionado
             showDayDishes(day);
@@ -627,7 +581,8 @@ function createDishCard(dish, isToday) {
 // Pedir plato por WhatsApp
 function orderDish(name, description, price, image) {
     // Usar número de WhatsApp desde configuración global
-    const whatsappNumber = window.CONFIG_WHATSAPP_NUMBER || WHATSAPP_NUMBER;
+    const whatsappNumber = getWhatsappNumber();
+    if (!whatsappNumber) return;
     const message = `Hola, quiero pedir:
 
 🍽️ ${name}
