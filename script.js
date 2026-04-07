@@ -306,12 +306,65 @@ function showService(service) {
     // Actualizar información del servicio
     updateServiceInfo(service);
     
-    // Mostrar menú según el tipo de servicio
+    // Mostrar/ocultar galería de días según el servicio
+    const daysGallery = document.getElementById('days-gallery');
+    
     if (service === 'desayuno' || service === 'cena') {
+        // Ocultar galería de días para desayuno y cena
+        daysGallery.style.display = 'none';
         showServiceMenu(service);
     } else {
+        // Mostrar galería de días para menú del día
+        daysGallery.style.display = 'flex';
+        setupDaysGallery();
         showDayMenuMenu(currentDay);
     }
+}
+
+// Configurar galería de días
+function setupDaysGallery() {
+    const daysGallery = document.getElementById('days-gallery');
+    
+    if (!menuData || !menuData.menu) {
+        daysGallery.innerHTML = '<p>No hay menú disponible</p>';
+        return;
+    }
+    
+    const days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+    let galleryHTML = '';
+    
+    days.forEach(day => {
+        if (menuData.menu[day]) {
+            const isToday = day === currentDay;
+            const dayName = day.charAt(0).toUpperCase() + day.slice(1);
+            
+            galleryHTML += `
+                <div class="day-card ${isToday ? 'today' : ''} ${day === currentDay ? 'active' : ''}" data-day="${day}">
+                    <div class="day-name">${dayName}</div>
+                    <div class="day-date">${menuData.menu[day].length} platos</div>
+                </div>
+            `;
+        }
+    });
+    
+    daysGallery.innerHTML = galleryHTML;
+    
+    // Agregar event listeners a las tarjetas de días
+    const dayCards = daysGallery.querySelectorAll('.day-card');
+    dayCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const day = card.dataset.day;
+            
+            // Remover clase active de todas las tarjetas
+            dayCards.forEach(c => c.classList.remove('active'));
+            
+            // Agregar clase active a la tarjeta clickeada
+            card.classList.add('active');
+            
+            // Mostrar menú del día seleccionado
+            showDayMenuMenu(day);
+        });
+    });
 }
 
 // Actualizar información del servicio
