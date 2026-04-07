@@ -398,17 +398,9 @@ function showService(service) {
     // Actualizar información del servicio
     updateServiceInfo(service);
     
-    // Mostrar/ocultar galería de días según el servicio
-    const daysGallery = document.getElementById('days-gallery');
-    
     if (service === 'desayuno' || service === 'cena') {
-        // Ocultar galería de días para desayuno y cena
-        daysGallery.style.display = 'none';
         showServiceMenu(service);
     } else {
-        // Mostrar galería de días para menú del día
-        daysGallery.style.display = 'flex';
-        setupDaysGallery();
         showDayMenuMenu(currentDay);
     }
 }
@@ -489,6 +481,9 @@ function updateServiceInfo(service) {
 // Mostrar menú de servicio (desayuno o cena)
 function showServiceMenu(service) {
     const container = document.getElementById('menu-container');
+
+    container.classList.add('menu-grid');
+    container.classList.remove('menu-day');
     
     if (!menuData || !menuData[service]) {
         container.innerHTML = `
@@ -518,6 +513,9 @@ function showServiceMenu(service) {
 // Mostrar menú del día (para servicio de menú)
 function showDayMenuMenu(day) {
     const container = document.getElementById('menu-container');
+
+    container.classList.remove('menu-grid');
+    container.classList.add('menu-day');
     
     if (!menuData || !menuData[day]) {
         container.innerHTML = `
