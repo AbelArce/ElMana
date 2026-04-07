@@ -5,6 +5,7 @@ const DAYS_OF_WEEK = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'vier
 // ===== VARIABLES GLOBALES =====
 let menuData = null;
 let horariosData = null;
+let configData = null;
 let currentDay = null;
 let currentService = null;
 
@@ -20,6 +21,7 @@ async function initializeApp() {
         
         // Cargar datos
         await Promise.all([
+            loadConfig(),
             loadMenu(),
             loadHorarios()
         ]);
@@ -89,44 +91,61 @@ function getCurrentService() {
     }
 }
 
-// Cargar menú desde datos integrados (evita problemas CORS)
+// Cargar configuración desde JSON
+async function loadConfig() {
+    try {
+        const response = await fetch('config.json');
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        configData = await response.json();
+        console.log('Configuración cargada:', configData);
+        updatePageWithConfig();
+    } catch (error) {
+        console.error('Error al cargar la configuración:', error);
+        // Usar configuración por defecto
+        configData = {
+            restaurante: {
+                nombre: "El Maná",
+                whatsapp: "519XXXXXXXX",
+                direccion: "Costado del parque de Pueblo Nuevo, Ferreñafe, Lambayeque, Perú"
+            },
+            ubicacion: {
+                maps_url: "https://maps.app.goo.gl/5rrnnP4TKV6qARcn8",
+                maps_embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.123456789!2d-79.8469!3d-6.0489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ac3a5b3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sEl+Man%C3%A1!5e0!3m2!1ses!2spe!4v1234567890123"
+            },
+            imagenes: {
+                hero: "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
+                restaurante: "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
+                fallback: "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+            }
+        };
+    }
+}
+// Cargar menú desde JSON
 async function loadMenu() {
     try {
-        // Usar datos integrados en lugar de fetch
-        if (typeof MENU_DATA !== 'undefined') {
-            menuData = MENU_DATA;
-            console.log('Menú cargado desde datos integrados:', menuData);
-        } else {
-            // Fallback: intentar cargar desde archivo (para servidor)
-            const response = await fetch('menu.json');
-            if (!response.ok) {
-                throw new Error(`Error HTTP: ${response.status}`);
-            }
-            menuData = await response.json();
-            console.log('Menú cargado desde archivo:', menuData);
+        const response = await fetch('menu.json');
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
         }
+        menuData = await response.json();
+        console.log('Menú cargado:', menuData);
     } catch (error) {
         console.error('Error al cargar el menú:', error);
         throw error;
     }
 }
 
-// Cargar horarios desde datos integrados (evita problemas CORS)
+// Cargar horarios desde JSON
 async function loadHorarios() {
     try {
-        // Usar datos integrados en lugar de fetch
-        if (typeof HORARIOS_DATA !== 'undefined') {
-            horariosData = HORARIOS_DATA;
-            console.log('Horarios cargados desde datos integrados:', horariosData);
-        } else {
-            // Fallback: intentar cargar desde archivo (para servidor)
-            const response = await fetch('horarios.json');
-            if (!response.ok) {
-                throw new Error(`Error HTTP: ${response.status}`);
-            }
-            horariosData = await response.json();
-            console.log('Horarios cargados desde archivo:', horariosData);
+        const response = await fetch('horarios.json');
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
         }
+        horariosData = await response.json();
+        console.log('Horarios cargados:', horariosData);
     } catch (error) {
         console.error('Error al cargar los horarios:', error);
         // Usar horarios por defecto si hay error
@@ -155,6 +174,68 @@ function setupNavigation() {
             navMenu.classList.remove('active');
         });
     });
+}
+
+// Actualizar página con configuración
+function updatePageWithConfig() {
+    if (!configData) return;
+    
+    // Actualizar meta tags
+    const titleElement = document.getElementById('page-title');
+    const descriptionElement = document.getElementById('page-description');
+    const keywordsElement = document.getElementById('page-keywords');
+    
+    if (titleElement && configData.seo?.title) {
+        titleElement.textContent = configData.seo.title;
+        document.title = configData.seo.title;
+    }
+    
+    if (descriptionElement && configData.seo?.description) {
+        descriptionElement.content = configData.seo.description;
+    }
+    
+    if (keywordsElement && configData.seo?.keywords) {
+        keywordsElement.content = configData.seo.keywords;
+    }
+    
+    // Actualizar WhatsApp
+    const whatsappNumber = configData.restaurante?.whatsapp || WHATSAPP_NUMBER;
+    const whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]');
+    whatsappLinks.forEach(link => {
+        link.href = `https://wa.me/${whatsappNumber}`;
+    });
+    
+    // Actualizar dirección
+    const direccionElement = document.getElementById('direccion');
+    const footerDireccionElement = document.getElementById('footer-direccion');
+    const direccion = configData.restaurante?.direccion || 'Dirección no disponible';
+    
+    if (direccionElement) direccionElement.textContent = direccion;
+    if (footerDireccionElement) footerDireccionElement.textContent = direccion;
+    
+    // Actualizar WhatsApp en footer
+    const footerWhatsappElement = document.getElementById('footer-whatsapp');
+    if (footerWhatsappElement) {
+        footerWhatsappElement.textContent = `+51 ${whatsappNumber.substring(2)}`;
+    }
+    
+    // Actualizar mapa
+    const mapsLink = document.getElementById('maps-link');
+    const mapsIframe = document.getElementById('maps-iframe');
+    
+    if (mapsLink && configData.ubicacion?.maps_url) {
+        mapsLink.href = configData.ubicacion.maps_url;
+    }
+    
+    if (mapsIframe && configData.ubicacion?.maps_embed) {
+        mapsIframe.src = configData.ubicacion.maps_embed;
+    }
+    
+    // Actualizar imagen de fallback
+    const fallbackImageUrl = configData.imagenes?.fallback || 'https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible';
+    
+    // Actualizar variable global para uso en otras funciones
+    window.CONFIG_FALLBACK_IMAGE = fallbackImageUrl;
 }
 
 // Configurar tabs de servicios
@@ -354,7 +435,7 @@ function createDishCard(dish, isToday) {
         <div class="menu-card ${isToday ? 'today' : ''}" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
             <div class="menu-image-container">
                 <img src="${dish.imagen}" alt="${dish.nombre}" class="menu-image" 
-                     onerror="this.src='https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg'">
+                     onerror="this.src=window.CONFIG_FALLBACK_IMAGE || 'https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible'">
             </div>
             <div class="menu-content">
                 <h3 class="menu-title">${dish.nombre}</h3>
