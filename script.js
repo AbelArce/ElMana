@@ -180,6 +180,10 @@ function setupNavigation() {
 function updatePageWithConfig() {
     if (!configData) return;
     
+    // Obtener número de WhatsApp desde configuración
+    const whatsappNumber = configData.restaurante?.whatsapp || WHATSAPP_NUMBER;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+    
     // Actualizar meta tags
     const titleElement = document.getElementById('page-title');
     const descriptionElement = document.getElementById('page-description');
@@ -198,11 +202,10 @@ function updatePageWithConfig() {
         keywordsElement.content = configData.seo.keywords;
     }
     
-    // Actualizar WhatsApp
-    const whatsappNumber = configData.restaurante?.whatsapp || WHATSAPP_NUMBER;
+    // Actualizar todos los enlaces de WhatsApp
     const whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]');
     whatsappLinks.forEach(link => {
-        link.href = `https://wa.me/${whatsappNumber}`;
+        link.href = whatsappUrl;
     });
     
     // Actualizar dirección
@@ -236,6 +239,7 @@ function updatePageWithConfig() {
     
     // Actualizar variable global para uso en otras funciones
     window.CONFIG_FALLBACK_IMAGE = fallbackImageUrl;
+    window.CONFIG_WHATSAPP_NUMBER = whatsappNumber;
 }
 
 // Configurar tabs de servicios
@@ -453,7 +457,8 @@ function createDishCard(dish, isToday) {
 
 // Pedir plato por WhatsApp
 function orderDish(name, description, price, image) {
-    const whatsappNumber = configData?.restaurante?.whatsapp || WHATSAPP_NUMBER;
+    // Usar número de WhatsApp desde configuración global
+    const whatsappNumber = window.CONFIG_WHATSAPP_NUMBER || WHATSAPP_NUMBER;
     const message = `Hola, quiero pedir:
 
 🍽️ ${name}
