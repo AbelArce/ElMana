@@ -270,4 +270,4 @@ Este proyecto es de uso libre para el restaurante El Maná.
 
 **Desarrollado con ❤️ para El Maná - Ferreñafe, Perú**
 
-*Última actualización: 2024*
+*Última actualización: 2026*
