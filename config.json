@@ -1,4 +1,9 @@
 {
+  "version": {
+    "numero": "1.0.0",
+    "fecha": "2026-04-07",
+    "descripcion": "Versión inicial con sistema dinámico completo"
+  },
   "restaurante": {
     "nombre": "El Maná",
     "propietario": "César Daniel Santisteban Cabrera",

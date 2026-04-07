@@ -90,13 +90,43 @@ Edita `menu.json` con tu información:
 - Imgur, Cloudinary, o cualquier servicio de hosting de imágenes
 - Asegúrate de que las URLs sean públicas y accesibles
 
-## 🌐 Despliegue en GitHub Pages
+### 4. **Control de Versiones**
+
+#### Actualización Automática de Versión
+El sistema incluye control de versiones automático:
+
+```powershell
+# Actualizar versión con descripción
+.\update-version.ps1 "Nueva funcionalidad de promociones"
+
+# O con descripción por defecto
+.\update-version.ps1
+```
+
+#### Estructura de Versiones
+- **Formato:** `vX.Y.Z (YYYY-MM-DD)`
+- **Incremento automático:** Patch (Z) aumenta con cada actualización
+- **Registro:** Fecha y descripción del cambio
+- **Visual:** Versión mostrada en footer del sitio
+
+#### Archivos de Versión
+- **`config.json`**: Contiene información de versión
+- **`update-version.ps1`**: Script PowerShell para Windows
+- **`update-version.sh`**: Script Bash para Linux/Mac
+
+#### Flujo de Trabajo
+1. Realizar cambios en el código
+2. Ejecutar script de versión: `.\update-version.ps1 "descripción"`
+3. Revisar cambios en config.json
+4. Hacer commit: `git add . && git commit -m "vX.Y.Z: descripción"`
+5. Push: `git push`
+
+### 5. **Despliegue** en GitHub Pages
 
 ### Método 1: Interfaz Web
 
 1. **Crear Repositorio**
    - Ve a GitHub y crea un nuevo repositorio llamado `ElMana`
-   - Sube todos los archivos
 
 2. **Activar GitHub Pages**
    - Ve a Settings → Pages

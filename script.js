@@ -260,6 +260,13 @@ function updatePageWithConfig() {
     const whatsappNumber = configData.restaurante?.whatsapp || WHATSAPP_NUMBER;
     const whatsappUrl = `https://wa.me/${whatsappNumber}`;
     
+    // Actualizar versión en footer
+    const versionElement = document.getElementById('version-info');
+    if (versionElement && configData.version) {
+        const version = configData.version;
+        versionElement.innerHTML = `v${version.numero} (${version.fecha})`;
+    }
+    
     // Actualizar meta tags
     const titleElement = document.getElementById('page-title');
     const descriptionElement = document.getElementById('page-description');
