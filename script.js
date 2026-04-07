@@ -3,9 +3,10 @@ const WHATSAPP_NUMBER = ''; // Reemplazar con número real
 const DAYS_OF_WEEK = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
 
 // ===== VARIABLES GLOBALES =====
+let configData = null;
 let menuData = null;
 let horariosData = null;
-let configData = null;
+let promotionsData = null;
 let currentDay = null;
 let currentService = null;
 
@@ -23,14 +24,12 @@ async function initializeApp() {
         await Promise.all([
             loadConfig(),
             loadMenu(),
-            loadHorarios()
+            loadHorarios(),
+            loadPromotions()
         ]);
         
-        // Determinar servicio actual según horario
-        currentService = getCurrentService();
-        
-        // Configurar navegación
-        setupNavigation();
+        // Detectar día y servicio actual
+        detectCurrentDayAndService();
         
         // Configurar tabs de servicios
         setupServiceTabs();
@@ -38,15 +37,11 @@ async function initializeApp() {
         // Mostrar servicio actual
         showService(currentService);
         
-        // Configurar animaciones al hacer scroll
-        setupScrollAnimations();
-        
         console.log('Aplicación inicializada correctamente');
         console.log('Día actual:', currentDay);
         console.log('Servicio actual:', currentService);
     } catch (error) {
         console.error('Error al inicializar la aplicación:', error);
-        showError('Error al cargar el menú. Por favor, recargue la página.');
     }
 }
 
@@ -122,6 +117,87 @@ async function loadConfig() {
         };
     }
 }
+
+// Cargar promociones desde JSON
+async function loadPromotions() {
+    try {
+        const response = await fetch('promociones.json');
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        promotionsData = await response.json();
+        console.log('Promociones cargadas:', promotionsData);
+        renderPromotions();
+    } catch (error) {
+        console.error('Error al cargar las promociones:', error);
+        // Ocultar sección de promociones si hay error
+        hidePromotionsSection();
+    }
+}
+
+// Renderizar promociones
+function renderPromotions() {
+    const promotionsGrid = document.getElementById('promotions-grid');
+    const promotionsSection = document.getElementById('promociones');
+    
+    if (!promotionsData || !promotionsData.promociones || promotionsData.promociones.length === 0) {
+        hidePromotionsSection();
+        return;
+    }
+    
+    let promotionsHTML = '';
+    
+    promotionsData.promociones.forEach(promo => {
+        const hasOriginalPrice = promo.precio_original && promo.precio_original.trim() !== '';
+        const buttonText = promo.id === 'descuento-familia' ? 'Reservar' : 'Pedir Ahora';
+        
+        promotionsHTML += `
+            <div class="promotion-card">
+                <div class="promotion-image">
+                    <img src="${promo.imagen || 'https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible'}" alt="${promo.nombre}">
+                </div>
+                <div class="promotion-content">
+                    <h3>${promo.nombre}</h3>
+                    <p>${promo.descripcion}</p>
+                    <div class="promotion-price">
+                        ${hasOriginalPrice ? `<span class="original-price">S/. ${promo.precio_original}</span>` : ''}
+                        <span class="current-price">${promo.precio_actual.startsWith('S/.') ? promo.precio_actual : (promo.precio_actual.includes('%') ? promo.precio_actual : `S/. ${promo.precio_actual}`)}</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" target="_blank" data-promo-id="${promo.id}" data-message="${promo.whatsapp_message}">${buttonText}</a>
+                </div>
+            </div>
+        `;
+    });
+    
+    promotionsGrid.innerHTML = promotionsHTML;
+    
+    // Agregar event listeners a los botones de promociones
+    const promoButtons = promotionsGrid.querySelectorAll('.btn');
+    promoButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const promoId = btn.dataset.promoId;
+            const message = btn.dataset.message;
+            orderPromotion(promoId, message);
+        });
+    });
+}
+
+// Ocultar sección de promociones
+function hidePromotionsSection() {
+    const promotionsSection = document.getElementById('promociones');
+    if (promotionsSection) {
+        promotionsSection.style.display = 'none';
+    }
+}
+
+// Pedir promoción
+function orderPromotion(promoId, message) {
+    const whatsappNumber = window.CONFIG_WHATSAPP_NUMBER || WHATSAPP_NUMBER;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+}
+
 // Cargar menú desde JSON
 async function loadMenu() {
     try {

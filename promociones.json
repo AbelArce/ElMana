@@ -1,0 +1,31 @@
+{
+  "promociones": [
+    {
+      "id": "combo-ejecutivo",
+      "nombre": "Combo Ejecutivo",
+      "descripcion": "Plato del día + bebida + postre",
+      "precio_original": "25.00",
+      "precio_actual": "20.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
+      "whatsapp_message": "Hola,%20quiero%20aprovechar%20el%20Combo%20Ejecutivo"
+    },
+    {
+      "id": "2x1-bebidas",
+      "nombre": "2x1 en Bebidas",
+      "descripcion": "Válido todos los días en horario de almuerzo",
+      "precio_original": "",
+      "precio_actual": "8.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
+      "whatsapp_message": "Hola,%20quiero%20aprovechar%20el%202x1%20en%20bebidas"
+    },
+    {
+      "id": "descuento-familia",
+      "nombre": "Descuento Familia",
+      "descripcion": "10% de descuento en grupos de 4+ personas",
+      "precio_original": "",
+      "precio_actual": "10% OFF",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
+      "whatsapp_message": "Hola,%20somos%20un%20grupo%20familiar%20y%20queremos%20hacer%20una%20reserva"
+    }
+  ]
+}
