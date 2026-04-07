@@ -453,6 +453,7 @@ function createDishCard(dish, isToday) {
 
 // Pedir plato por WhatsApp
 function orderDish(name, description, price, image) {
+    const whatsappNumber = configData?.restaurante?.whatsapp || WHATSAPP_NUMBER;
     const message = `Hola, quiero pedir:
 
 🍽️ ${name}
@@ -463,7 +464,10 @@ function orderDish(name, description, price, image) {
 
 📍 Para recojo`;
     
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    // Codificar el mensaje correctamente para URL
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
     window.open(whatsappUrl, '_blank');
     
     // Registrar evento de analytics (si está disponible)
