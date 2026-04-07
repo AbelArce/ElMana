@@ -1,5 +1,5 @@
 // ===== CONFIGURACIÓN =====
-const WHATSAPP_NUMBER = '519XXXXXXXX'; // Reemplazar con número real
+const WHATSAPP_NUMBER = ''; // Reemplazar con número real
 const DAYS_OF_WEEK = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
 
 // ===== VARIABLES GLOBALES =====
@@ -107,17 +107,17 @@ async function loadConfig() {
         configData = {
             restaurante: {
                 nombre: "El Maná",
-                whatsapp: "519XXXXXXXX",
-                direccion: "Costado del parque de Pueblo Nuevo, Ferreñafe, Lambayeque, Perú"
+                whatsapp: "",
+                direccion: ""
             },
             ubicacion: {
-                maps_url: "https://maps.app.goo.gl/5rrnnP4TKV6qARcn8",
-                maps_embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.123456789!2d-79.8469!3d-6.0489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ac3a5b3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sEl+Man%C3%A1!5e0!3m2!1ses!2spe!4v1234567890123"
+                maps_url: "",
+                maps_embed: ""
             },
             imagenes: {
-                hero: "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
-                restaurante: "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
-                fallback: "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+                hero: "https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible",
+                restaurante: "https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible",
+                fallback: "https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible"
             }
         };
     }
@@ -222,10 +222,12 @@ function updatePageWithConfig() {
     // Actualizar dirección
     const direccionElement = document.getElementById('direccion');
     const footerDireccionElement = document.getElementById('footer-direccion');
+    const contactoDireccionElement = document.getElementById('contacto-direccion');
     const direccion = configData.restaurante?.direccion || 'Dirección no disponible';
     
     if (direccionElement) direccionElement.textContent = direccion;
     if (footerDireccionElement) footerDireccionElement.textContent = direccion;
+    if (contactoDireccionElement) contactoDireccionElement.textContent = direccion;
     
     // Actualizar WhatsApp en footer
     const footerWhatsappElement = document.getElementById('footer-whatsapp');

@@ -316,42 +316,56 @@ section {
 .service-tabs {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    padding: 0 1rem;
 }
 
 .service-tab-btn {
-    padding: 15px 30px;
+    padding: 10px 20px;
     background: transparent;
     color: var(--color-gray-light);
-    border: 2px solid rgba(212, 175, 55, 0.3);
-    border-radius: var(--border-radius);
-    font-size: 1.1rem;
-    font-weight: 500;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 120px;
+    justify-content: center;
 }
 
 .service-tab-btn:hover {
     border-color: var(--color-accent);
     color: var(--color-accent);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 }
 
 .service-tab-btn.active {
-    background: var(--color-accent);
-    color: var(--color-primary);
-    border-color: var(--color-accent);
+    background: linear-gradient(135deg, #D4AF37, #B8941F);
+    color: #000000;
+    border-color: #D4AF37;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
 }
 
 .service-tab-btn.current {
     border-color: var(--color-warm-light);
     color: var(--color-warm-light);
     animation: pulse 2s infinite;
+}
+
+.service-tab-btn.current.active {
+    background: linear-gradient(135deg, #FF8C00, #FF6B35);
+    border-color: #FF8C00;
+    color: #000000;
 }
 
 .service-info {
@@ -523,6 +537,8 @@ section {
 
 .promotion-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .promotion-content h3 {
@@ -550,6 +566,12 @@ section {
     color: var(--color-accent);
     font-size: 1.3rem;
     font-weight: 600;
+}
+
+.promotion-content .btn {
+    margin-top: auto;
+    width: 100%;
+    justify-self: center;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -923,14 +945,16 @@ section {
         align-items: center;
     }
 
-    .menu-tabs {
+    .service-tabs {
         flex-wrap: wrap;
         gap: 0.3rem;
+        padding: 0 0.5rem;
     }
 
-    .tab-btn {
-        padding: 10px 18px;
-        font-size: 0.9rem;
+    .service-tab-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        min-width: 100px;
     }
 
     .menu-container,
