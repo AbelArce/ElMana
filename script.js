@@ -203,9 +203,11 @@ function updatePageWithConfig() {
     }
     
     // Actualizar todos los enlaces de WhatsApp
-    const whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]');
+    const whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], a[href="#"]');
     whatsappLinks.forEach(link => {
-        link.href = whatsappUrl;
+        if (link.id && (link.id.includes('whatsapp') || link.id.includes('hero') || link.id.includes('contacto') || link.id.includes('location'))) {
+            link.href = whatsappUrl;
+        }
     });
     
     // Actualizar enlaces específicos por ID
@@ -242,6 +244,19 @@ function updatePageWithConfig() {
     if (mapsIframe && configData.ubicacion?.maps_embed) {
         mapsIframe.src = configData.ubicacion.maps_embed;
     }
+    
+    // Actualizar imágenes dinámicamente
+    const aboutImage = document.getElementById('about-img');
+    const promoComboImage = document.getElementById('promo-combo-img');
+    const promoBebidasImage = document.getElementById('promo-bebidas-img');
+    const promoFamiliaImage = document.getElementById('promo-familia-img');
+    
+    const imageUrl = configData.imagenes?.restaurante || 'https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible';
+    
+    if (aboutImage) aboutImage.src = imageUrl;
+    if (promoComboImage) promoComboImage.src = imageUrl;
+    if (promoBebidasImage) promoBebidasImage.src = imageUrl;
+    if (promoFamiliaImage) promoFamiliaImage.src = imageUrl;
     
     // Actualizar imagen de fallback
     const fallbackImageUrl = configData.imagenes?.fallback || 'https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible';
