@@ -354,7 +354,7 @@ function createDishCard(dish, isToday) {
         <div class="menu-card ${isToday ? 'today' : ''}" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
             <div class="menu-image-container">
                 <img src="${dish.imagen}" alt="${dish.nombre}" class="menu-image" 
-                     onerror="this.src='https://via.placeholder.com/400x300/000000/FFFFFF?text=Imagen+no+disponible'">
+                     onerror="this.src='https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg'">
             </div>
             <div class="menu-content">
                 <h3 class="menu-title">${dish.nombre}</h3>
