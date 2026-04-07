@@ -57,6 +57,42 @@
       "descripcion": "Pescado frito crujiente con yuca sancochada, sarza y salsa criolla",
       "precio": "24.00",
       "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Ceviche Mixto del Norte2",
+      "descripcion": "Pescado y mariscos frescos en leche de tigre, acompañado de camote y chifles",
+      "precio": "30.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Pepián de Pavo2",
+      "descripcion": "Pavo desmenuzado en salsa de ají panca y maní, con arroz y yuca",
+      "precio": "26.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Chicharrón de Pescado2",
+      "descripcion": "Pescado frito crujiente con yuca sancochada, sarza y salsa criolla",
+      "precio": "24.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Ceviche Mixto del Norte3",
+      "descripcion": "Pescado y mariscos frescos en leche de tigre, acompañado de camote y chifles",
+      "precio": "30.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Pepián de Pavo3",
+      "descripcion": "Pavo desmenuzado en salsa de ají panca y maní, con arroz y yuca",
+      "precio": "26.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+    },
+    {
+      "nombre": "Chicharrón de Pescado3",
+      "descripcion": "Pescado frito crujiente con yuca sancochada, sarza y salsa criolla",
+      "precio": "24.00",
+      "imagen": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
     }
   ],
   "miercoles": [
