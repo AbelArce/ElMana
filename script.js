@@ -54,11 +54,14 @@ function getCurrentDay() {
 }
 
 // Obtener servicio actual según horario
-function getCurrentService() {
+function getCurrentService(day = null) {
     const now = new Date();
     const currentHour = now.getHours();
     const currentMinute = now.getMinutes();
     const currentTimeInMinutes = currentHour * 60 + currentMinute;
+    
+    // Usar el día proporcionado o el día actual
+    const targetDay = day || getCurrentDay();
     
     // Definir rangos de tiempo en minutos
     const breakfastStart = 8 * 60;     // 8:00 AM
@@ -75,7 +78,7 @@ function getCurrentService() {
         return 'menu';
     } else if (currentTimeInMinutes >= dinnerStart && currentTimeInMinutes < dinnerEnd) {
         // La cena solo está disponible viernes, sábado y domingo
-        if (['viernes', 'sabado', 'domingo'].includes(currentDay)) {
+        if (['viernes', 'sabado', 'domingo'].includes(targetDay)) {
             return 'cena';
         } else {
             return 'menu'; // Si no es día de cena, mostrar menú
@@ -84,6 +87,12 @@ function getCurrentService() {
         // Fuera de horario, mostrar desayuno si es muy temprano, o menú si es tarde
         return currentTimeInMinutes < breakfastStart ? 'desayuno' : 'menu';
     }
+}
+
+// Detectar día y servicio actual
+function detectCurrentDayAndService() {
+    currentDay = getCurrentDay();
+    currentService = getCurrentService();
 }
 
 // Cargar configuración desde JSON
