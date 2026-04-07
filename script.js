@@ -208,6 +208,15 @@ function updatePageWithConfig() {
         link.href = whatsappUrl;
     });
     
+    // Actualizar enlaces específicos por ID
+    const heroWhatsappLink = document.getElementById('hero-whatsapp');
+    const locationWhatsappLink = document.getElementById('location-whatsapp');
+    const contactoWhatsappLink = document.getElementById('contacto-whatsapp');
+    
+    if (heroWhatsappLink) heroWhatsappLink.href = whatsappUrl;
+    if (locationWhatsappLink) locationWhatsappLink.href = whatsappUrl;
+    if (contactoWhatsappLink) contactoWhatsappLink.href = whatsappUrl;
+    
     // Actualizar dirección
     const direccionElement = document.getElementById('direccion');
     const footerDireccionElement = document.getElementById('footer-direccion');
