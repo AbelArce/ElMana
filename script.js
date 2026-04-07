@@ -513,9 +513,9 @@ function getDayDisplayName(day) {
 // Obtener nombre para mostrar del servicio
 function getServiceDisplayName(service) {
     const serviceNames = {
-        'desayuno': '🍳 Desayuno',
-        'menu': '🍽️ Menú del Día',
-        'cena': '🌙 Cena'
+        'desayuno': 'Desayuno',
+        'menu': 'Menú del Día',
+        'cena': 'Cena'
     };
     return serviceNames[service] || service;
 }
