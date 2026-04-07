@@ -1,8 +1,8 @@
 {
     "version":  {
-                    "numero":  "1.0.1",
+                    "numero":  "1.0.2",
                     "fecha":  "2026-04-07",
-                    "descripcion":  "Mejorar diseño de menú horizontal y días compactos"
+                    "descripcion":  "Corregir diseño: días arriba y menú en grid como cena"
                 },
     "restaurante":  {
                         "nombre":  "El ManÃ¡",
