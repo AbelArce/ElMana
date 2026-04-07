@@ -1,33 +1,33 @@
 {
-  "version": {
-    "numero": "1.0.0",
-    "fecha": "2026-04-07",
-    "descripcion": "Versión inicial con sistema dinámico completo"
-  },
-  "restaurante": {
-    "nombre": "El Maná",
-    "propietario": "César Daniel Santisteban Cabrera",
-    "direccion": "Salcedo Pastor 248 - Pueblo Nuevo - Ferreñafe",
-    "whatsapp": "51937778166",
-    "email": "contacto@elmana.com",
-    "descripcion": "Sabor que alimenta el alma"
-  },
-  "ubicacion": {
-    "maps_url": "https://www.google.com/maps/place/El+Man%C3%A1/@-6.6396454,-79.7990202,1301m/data=!3m1!1e3!4m10!1m2!2m1!1zRWwgTWFuw6E!3m6!1s0x904c956af990f8bf:0x1b01ac0909b8f996!8m2!3d-6.6396357!4d-79.7966855!15sCghFbCBNYW7DoVoKIghlbCBtYW7DoZIBCnJlc3RhdXJhbnTgAQA!16s%2Fg%2F11hz7jrz9s?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D",
-    "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.123456789!2d-79.7967408!3d-6.6396454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904c956af990f8bf%3A0x1b01ac0909b8f996!2sEl+Man%C3%A1!5e0!3m2!1ses!2spe!4v1234567890123",
-    "coordinates": {
-      "lat": -6.6396454,
-      "lng": -79.7967408
-    }
-  },
-  "imagenes": {
-    "hero": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
-    "restaurante": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
-    "fallback": "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
-  },
-  "seo": {
-    "title": "El Maná - Restaurante Premium en Ferreñafe",
-    "description": "Restaurante El Maná en Ferreñafe, Perú. Experiencia gastronómica premium con menú semanal variado y servicio excepcional.",
-    "keywords": "restaurante, Ferreñafe, comida peruana, menú semanal, pedidos WhatsApp"
-  }
+    "version":  {
+                    "numero":  "1.0.1",
+                    "fecha":  "2026-04-07",
+                    "descripcion":  "Mejorar dise�o de men� horizontal y d�as compactos"
+                },
+    "restaurante":  {
+                        "nombre":  "El Maná",
+                        "propietario":  "César Daniel Santisteban Cabrera",
+                        "direccion":  "Salcedo Pastor 248 - Pueblo Nuevo - Ferreñafe",
+                        "whatsapp":  "51937778166",
+                        "email":  "contacto@elmana.com",
+                        "descripcion":  "Sabor que alimenta el alma"
+                    },
+    "ubicacion":  {
+                      "maps_url":  "https://www.google.com/maps/place/El+Man%C3%A1/@-6.6396454,-79.7990202,1301m/data=!3m1!1e3!4m10!1m2!2m1!1zRWwgTWFuw6E!3m6!1s0x904c956af990f8bf:0x1b01ac0909b8f996!8m2!3d-6.6396357!4d-79.7966855!15sCghFbCBNYW7DoVoKIghlbCBtYW7DoZIBCnJlc3RhdXJhbnTgAQA!16s%2Fg%2F11hz7jrz9s?entry=ttu\u0026g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+                      "maps_embed":  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.123456789!2d-79.7967408!3d-6.6396454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904c956af990f8bf%3A0x1b01ac0909b8f996!2sEl+Man%C3%A1!5e0!3m2!1ses!2spe!4v1234567890123",
+                      "coordinates":  {
+                                          "lat":  -6.6396454,
+                                          "lng":  -79.7967408
+                                      }
+                  },
+    "imagenes":  {
+                     "hero":  "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
+                     "restaurante":  "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg",
+                     "fallback":  "https://www.perudelights.com/wp-content/uploads/2018/04/1400000015479.jpg"
+                 },
+    "seo":  {
+                "title":  "El Maná - Restaurante Premium en Ferreñafe",
+                "description":  "Restaurante El Maná en Ferreñafe, Perú. Experiencia gastronómica premium con menú semanal variado y servicio excepcional.",
+                "keywords":  "restaurante, Ferreñafe, comida peruana, menú semanal, pedidos WhatsApp"
+            }
 }
